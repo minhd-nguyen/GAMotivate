@@ -1,0 +1,23 @@
+.landing-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+.logo-section {
+    grid-column: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 150px;
+}
+
+.login-section {
+    grid-column: 2/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 150px;
+}

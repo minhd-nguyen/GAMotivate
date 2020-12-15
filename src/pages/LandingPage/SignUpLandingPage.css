@@ -1,0 +1,22 @@
+.sign-up-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.sign-up-logo {
+    grid-column: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 150px;
+}
+
+.sign-up-form {
+    grid-column: 2/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 150px;
+}

@@ -1,19 +1,27 @@
 import React from "react";
 import {Link} from 'react-router-dom'
+import Logo from '../../Assets/galogo2.png'
 
 import './NavBar.css'
+const searchIcon = <i className="fas fa-search"></i>
 
 const NavBar = ({ user, handleLogout }) => {
   let nav = user ? 
     <>
       <nav className="nav-bar">
-        <div className="nav-wrapper">
+        <div className="logo-link">
+          <Link to="/posts"><img alt="" src={Logo}></img></Link>
+        </div>
+        <div className="nav-search">
+          <textarea className="search" placeholder="Search..."></textarea>
+        </div>
+        <div className="links">
           <ul className="right">
             <li>
-              <Link to={`/user/${user._id}`}>Welcome, {user.name}</Link>
+              <Link className="nav-links" to={`/user/${user._id}`}>Welcome, {user.name}</Link>
             </li>
             <li>
-              <Link to=" " onClick={handleLogout}>Log Out</Link>
+              <Link className="nav-links" to="/login" onClick={handleLogout}>Log Out</Link>
             </li>
           </ul>
         </div>
@@ -22,13 +30,16 @@ const NavBar = ({ user, handleLogout }) => {
     :
     <>
       <nav className="nav-bar">
-        <div className="nav-wrapper">
+      <div className="logo-link">
+          <Link to="/posts"><img alt="" src={Logo}></img></Link>
+        </div>
+        <div className="links">
           <ul className="right">
             <li>
-              <Link to="/login">Log In</Link>
+              <Link className="nav-links" to="/login">Log In</Link>
             </li>
             <li>
-              <Link to="/signup">Sign Up</Link>
+              <Link className="nav-links" to="/signup">Sign Up</Link>
             </li>
           </ul>
         </div>

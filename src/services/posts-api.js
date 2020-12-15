@@ -5,8 +5,7 @@ export function getAll() {
     .then(res => res.json());
   }
   
-  export function create(post) {
-    console.log(post)
+  export function create(post) { 
     return fetch(BASE_URL, {
       method: 'POST',
       headers: {'content-type': 'application/json'},
@@ -15,7 +14,6 @@ export function getAll() {
   }
   
   export function update(post) {
-    
     return fetch(`${BASE_URL}/${post._id}`, {
       method: 'PUT',
       headers: {'content-type': 'application/json'},
