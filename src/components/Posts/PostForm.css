@@ -1,0 +1,45 @@
+.post-title {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.post-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+    
+}
+
+.main-post {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60vw;
+    height: 70px;
+}
+
+.post-btn-section {
+    margin-top: 30px;
+    
+}
+
+.post-btn {
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+    border: 1px solid rgb(250,223,80);
+    background-color: rgb(250,223,80);
+    color: black;
+    font-weight: bold;
+    box-shadow: 1px .5px 1px .5px black;
+}
+
+.post-btn:hover {
+    box-shadow: 2px 1px 2px 1px black;
+}
+
+.post-input {
+    height: 120px;
+    border-radius: 5px;
+}

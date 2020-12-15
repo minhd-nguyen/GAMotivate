@@ -8,12 +8,10 @@ const postSchema = new mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:'User'
     },
-    cohort:{type: String},
-    questionThreads: [{
+    comments: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref:'Thread'
+        ref:'Comment'
     }]
-    
 }, {
     timestamps:true
 })

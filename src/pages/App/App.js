@@ -1,20 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
-
 import NavBar from "../../components/NavBar/NavBar";
 
-import PostForm from '../../components/PostForm/PostForm';
 import Posts from '../../components/Posts/Posts';
 
-import LoginPage from "../LoginPage/LoginPage";
-import SignupPage from "../SignupPage/SignupPage";
+import LoginLandingPage from '../LandingPage/LoginLandingPage';
+import SignUpLandingPage from '../LandingPage/SignUpLandingPage'
 
+import * as postsAPI from "../../services/posts-api"
 import userService from "../../services/userService";
+import UserPage from "../UserPage/UserPage";
 
 import "./App.css";
 
 const App = () => {
+  const [posts, setPosts] = useState([])
   const [user, setUser] = useState("");
+
+
+  useEffect(() => {
+    getPosts()
+  }, [])
+
+  const getPosts = async () => {
+        const postData = await postsAPI.getAll()
+        setPosts(postData.reverse())
+    }
 
   const handleLogout = () => {
     userService.logout();
@@ -27,33 +38,38 @@ const App = () => {
 
   return (
     <>
-      <NavBar user={user} handleLogout={handleLogout} />
       <Switch>
         <Route exact path="/login" render={({history}) => 
           <>
-            <LoginPage 
+          <LoginLandingPage 
               history={history}
               handleSignupOrLogin={handleSignupOrLogin}
-            />
+              />
           </>
         }></Route>
 
         <Route exact path="/signup" render={({history}) => 
           <>
-            <SignupPage 
+            <SignUpLandingPage
               history={history}
               handleSignupOrLogin={handleSignupOrLogin}
             />
           </>
         }></Route>
+        
         <Route exact path="/posts" render={() => 
-        <div>
-          <PostForm user={user}/>
-          <Posts />
-        </div>
-      }>
+          <div>
+            <NavBar user={user} handleLogout={handleLogout} />
+            <Posts user={user} posts={posts} getPosts={getPosts}/>
+          </div>
+        }>
+        </Route>
+        <Route exact path="/user/:id" render={() => 
+          <UserPage user={user}/>
+                  }>
         </Route>
       </Switch>
+      
     </>
   );
 };

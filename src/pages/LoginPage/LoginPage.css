@@ -4,4 +4,50 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 50px;
+    border: 1px solid rgb(231,231,231);
+    border-radius: 10px;
+    background-color: rgb(231,231,231);
+    box-shadow: 3.5px 2px 3.5px 2px black;
+    width: 60%;
   }
+
+  .login-title {
+    font-size: 27px;
+  }
+
+  .login-signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+ .sign-title {
+   font-size: 20px;
+ }
+
+ .login-btn {
+   color: black;
+   width: 180px;
+   border-radius: 5px;
+ }
+
+
+ .sign-btn {
+   border: 1px solid red;
+   width: 100px;
+   height: 35px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: red;
+   text-decoration: none;
+   color: white;
+   border-radius: 5px;
+   margin-bottom: 10px;
+   box-shadow: 1px .5px 1px .5px black;
+ }
+
+ .sign-btn:hover {
+   box-shadow: 1.5px 1px 1.5px 1px black;
+ }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './SignUpForm.css';
 import { Link } from 'react-router-dom';
 
 import userService from '../../services/userService';
@@ -33,8 +34,8 @@ const SignupForm = ({history, handleSignupOrLogin, updateMessage}) => {
   }
   
   return (
-    <div>
-      <h3>Sign Up</h3>
+    <div className="sign-up">
+      <h3 className="signup-title">Welcome! <br /> Let's create your account.</h3>
       <form className="col s12" autoComplete="off" onSubmit={handleSubmit} >
         <div className="row">
           <div className="input-field col s12">
@@ -58,8 +59,7 @@ const SignupForm = ({history, handleSignupOrLogin, updateMessage}) => {
         </div>
         <div className="form-group">
           <div className="col-sm-12 text-center">
-            <button className="btn green" disabled={isFormInvalid()}>Sign Up</button>&nbsp;&nbsp;
-            <Link className="btn red" to='/'>Cancel</Link>
+            <button className="signup-btn btn yellow" disabled={isFormInvalid()}>Sign Up</button>&nbsp;&nbsp;
           </div>
         </div>
       </form>
