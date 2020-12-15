@@ -6,7 +6,7 @@ module.exports = {
     create,
     update,
     deleteOne,
-    addReply
+    addReply,
 }
 
 function getThreads(req, res) {

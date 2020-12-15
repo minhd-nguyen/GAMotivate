@@ -1,0 +1,12 @@
+.post {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  border-bottom: 2px solid black;
+  margin: 15px 0;
+}
+
+.message {
+  width: 80%;
+}

@@ -24,6 +24,10 @@ function signup(user) {
 function getUser() {
   return tokenService.getUserFromToken();
 }
+export function getUserFromId(id) {
+  return fetch(`${BASE_URL}/user/${id}`)
+  .then(res => res.json());
+}
 
 function logout() {
   tokenService.removeToken();
@@ -51,7 +55,8 @@ let functions = {
   signup,
   getUser,
   logout,
-  login
+  login,
+  getUserFromId
 };
 
 export default functions

@@ -1,4 +1,4 @@
-const BASE_URL= '/api/posts';
+const BASE_URL = "/api/posts";
 
 export function getAll() {
     return fetch(BASE_URL)
@@ -6,6 +6,7 @@ export function getAll() {
   }
   
   export function create(post) {
+    console.log(post)
     return fetch(BASE_URL, {
       method: 'POST',
       headers: {'content-type': 'application/json'},
@@ -14,6 +15,7 @@ export function getAll() {
   }
   
   export function update(post) {
+    
     return fetch(`${BASE_URL}/${post._id}`, {
       method: 'PUT',
       headers: {'content-type': 'application/json'},

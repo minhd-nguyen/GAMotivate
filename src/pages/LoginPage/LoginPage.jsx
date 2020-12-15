@@ -21,7 +21,7 @@ const LoginPage = ({history, handleSignupOrLogin}) => {
     try {
       await userService.login(loginInfo);
       handleSignupOrLogin();
-      history.push('/');
+      history.push('/posts');
     } catch (err) {
       console.log(err)
     }
@@ -45,7 +45,7 @@ const LoginPage = ({history, handleSignupOrLogin}) => {
         </div>
         <div className="row">
           <div className="col s12">
-            <Link to="/posts" className="btn green">Log In<i className="material-icons right">arrow_forward</i></Link>&nbsp;&nbsp;&nbsp;
+            <button className="btn green">Log In<i className="material-icons right">arrow_forward</i></button>&nbsp;&nbsp;&nbsp;
             <Link className="btn red" to='/'>Cancel<i className="material-icons right">cancel</i></Link>
           </div>
         </div>

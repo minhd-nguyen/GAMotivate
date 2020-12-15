@@ -1,18 +1,20 @@
 import React, { useState } from "react";
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch } from "react-router-dom";
 
 import NavBar from "../../components/NavBar/NavBar";
+
 import PostForm from '../../components/PostForm/PostForm';
+import Posts from '../../components/Posts/Posts';
 
-import LoginPage from '../LoginPage/LoginPage';
-import SignupPage from '../SignupPage/SignupPage';
+import LoginPage from "../LoginPage/LoginPage";
+import SignupPage from "../SignupPage/SignupPage";
 
-import userService from '../../services/userService';
+import userService from "../../services/userService";
 
 import "./App.css";
 
 const App = () => {
-  const [user, setUser] = useState('');
+  const [user, setUser] = useState("");
 
   const handleLogout = () => {
     userService.logout();
@@ -25,11 +27,7 @@ const App = () => {
 
   return (
     <>
-      <NavBar 
-        user={user}
-        handleLogout={handleLogout}
-      />
-
+      <NavBar user={user} handleLogout={handleLogout} />
       <Switch>
         <Route exact path="/login" render={({history}) => 
           <>
@@ -49,8 +47,11 @@ const App = () => {
           </>
         }></Route>
         <Route exact path="/posts" render={() => 
-        <PostForm />
-        }>
+        <div>
+          <PostForm user={user}/>
+          <Posts />
+        </div>
+      }>
         </Route>
       </Switch>
     </>
