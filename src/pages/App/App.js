@@ -14,7 +14,7 @@ import ProfileCard from '../../components/ProfileCard/ProfileCard';
 import * as postsAPI from "../../services/posts-api";
 import userService from "../../services/userService";
 
-import ProfileImage from '../../Assets/Profile Image.png';
+import ProfileImage from "../../Assets/Profile Image.png";
 
 import "./App.css";
 
@@ -43,10 +43,10 @@ const App = () => {
   return (
     <>
       <Switch>
-        <Route exact path='/'>
-          <Redirect to='/login'/>
+        <Route exact path="/">
+          <Redirect to="/login" />
         </Route>
-        
+
         <Route
           exact
           path="/login"
@@ -60,75 +60,86 @@ const App = () => {
           )}
         ></Route>
 
-        <Route exact path='/signup' render={({history}) => (
-          <>
-            <SignUpLandingPage history={history}
-            handleSignupOrLogin={handleSignupOrLogin}/>
-          </>
-        )}></Route>
-
         <Route
           exact
-          path="/posts"
-          render={() => (
-            user ?
-            <div>
-              <NavBar user={user} handleLogout={handleLogout} />
-              <div className="feed-page">
-                <div className="profile-section">
-               <ProfileCard user={user}/>
-                </div>
-                <div className="post-section">
-              <Posts user={user} posts={posts} setPosts={setPosts} />
-                </div>
-              </div>
-            </div>
-            :
-            <Redirect to='/login'/>
+          path="/signup"
+          render={({ history }) => (
+            <>
+              <SignUpLandingPage
+                history={history}
+                handleSignupOrLogin={handleSignupOrLogin}
+              />
+            </>
           )}
         ></Route>
 
         <Route
           exact
-          path="/user/:id"
-          render={() => 
-            <>
-              {user ?
-                <UserPage user={user} posts={posts}/>
-                :
-                <Redirect to='/login'/>
-              }
-            </>
-        }></Route>
-
-        <Route exact path='/user/:id/edit' render={() =>
-          <>
-          {user ?
-            <EditUserPage user={user}/>
-            :
-            <Redirect to='/login'/>
+          path="/posts"
+          render={() =>
+            user ? (
+              <div>
+                <NavBar user={user} handleLogout={handleLogout} />
+                <div className="feed-page">
+                  <div className="profile-section">
+                    <div className="profile-card">
+                      <i className="fad fa-user-circle fa-10x"></i>
+                      <p>Name</p>
+                      <p>Cohort</p>
+                    </div>
+                  </div>
+                  <div className="post-section">
+                    <Posts user={user} posts={posts} setPosts={setPosts} />
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <Redirect to="/login" />
+            )
           }
-          </>
-        }></Route>
+        ></Route>
+
+        <Route
+          exact
+          path="/user/:id"
+          render={() => (
+            <>
+              {user ? (
+                <UserPage user={user} posts={posts} />
+              ) : (
+                <Redirect to="/login" />
+              )}
+            </>
+          )}
+        ></Route>
+
+        <Route
+          exact
+          path="/user/:id/edit"
+          render={() => (
+            <>
+              {user ? <EditUserPage user={user} /> : <Redirect to="/login" />}
+            </>
+          )}
+        ></Route>
 
         <Route
           exact
           path="/post/:id"
           render={() => (
             <>
-              {user ?
+              {user ? (
                 <>
                   <NavBar user={user} handleLogout={handleLogout} />
                   <PostPage user={user} posts={posts} />
                 </>
-                :
-                <Redirect to='/login'/>
-              }
+              ) : (
+                <Redirect to="/login" />
+              )}
             </>
           )}
         ></Route>
       </Switch>
-      
     </>
   );
 };

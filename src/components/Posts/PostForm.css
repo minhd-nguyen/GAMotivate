@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 50px;
+  margin: 35px;
 }
 
 .post-container {
@@ -29,10 +29,10 @@
 }
 
 .post-btn {
-display: flex;
-justify-content: center;
-align-items: center;
-float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
   height: 30px;
   width: 100px;
   border-radius: 5px;

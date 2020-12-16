@@ -32,15 +32,32 @@ body {
 }
 
 .feed-page {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+  display: flex;
 }
 
 .profile-section {
-  grid-column: 1/2;
+  /* grid-column: 1/2; */
   display: flex;
   justify-content: center;
-  margin-top: 150px;
+  margin: 80px 20px 0 30px;
+}
+
+.profile-card {
+  width: 200px;
+  height: 300px;
+  border: 1px solid grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(246, 246, 246);
+  border-radius: 5px;
+}
+
+.profile-image {
+  width: 70px;
 }
 
 .post-section {
@@ -70,11 +87,13 @@ body {
   font-family: "Material Icons";
   font-style: normal;
   font-weight: 400;
-  src: local("Material Icons"),
-       local("MaterialIcons-Regular"),
-       url(https://rawgit.com/google/material-design-icons/master/iconfont/MaterialIcons-Regular.woff2) format("woff2"),
-       url(https://rawgit.com/google/material-design-icons/master/iconfont/MaterialIcons-Regular.woff) format("woff"),
-       url(https://rawgit.com/google/material-design-icons/master/iconfont/MaterialIcons-Regular.ttf) format("truetype");
+  src: local("Material Icons"), local("MaterialIcons-Regular"),
+    url(https://rawgit.com/google/material-design-icons/master/iconfont/MaterialIcons-Regular.woff2)
+      format("woff2"),
+    url(https://rawgit.com/google/material-design-icons/master/iconfont/MaterialIcons-Regular.woff)
+      format("woff"),
+    url(https://rawgit.com/google/material-design-icons/master/iconfont/MaterialIcons-Regular.ttf)
+      format("truetype");
 }
 
 .material-icons {
