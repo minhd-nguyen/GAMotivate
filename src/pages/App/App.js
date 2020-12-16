@@ -85,7 +85,7 @@ const App = () => {
                     <ProfileCard user={user}/>
                   </div>
                   <div className="post-section">
-                    <Posts user={user} posts={posts} setPosts={setPosts} />
+                    <Posts user={user} posts={posts} setPosts={setPosts} getPosts={getPosts}/>
                   </div>
                 </div>
               </div>
