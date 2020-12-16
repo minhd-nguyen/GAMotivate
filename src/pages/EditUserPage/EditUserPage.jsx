@@ -57,6 +57,9 @@ export default function EditUserPage({ user, setUser, history }) {
                         name="cohort"
                         value={formData.cohort}
                     >
+                        <option value="" selected>
+                            None Selected
+                        </option>
                         <option value="Software Engineer">
                             Software Engineer
                         </option>

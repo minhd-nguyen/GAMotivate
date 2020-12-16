@@ -8,10 +8,10 @@ const userSchema = new mongoose.Schema({
   email: {type: String, required: true, lowercase: true, unique: true},
   password: {type: String},
   avatar:{type: String},
-  cohort:{type: String},
-  location:{type:String},
-  linkedin:{type: String},
-  portfolio:{type: String},
+  cohort:{type: String, default:''},
+  location:{type:String, default:''},
+  linkedin:{type: String, default :''},
+  portfolio:{type: String, default:''},
 }, {
   timestamps: true
 });
