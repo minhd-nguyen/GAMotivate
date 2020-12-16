@@ -56,6 +56,7 @@ const Posts = ({ user, posts, setPosts, getPosts }) => {
                 id={post._id}
                 user={user}
                 handleDeletePost={handleDeletePost}
+                posts={posts}
             />
         )
     })
