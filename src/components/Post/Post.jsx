@@ -6,21 +6,16 @@ import SaveButton from "../../Assets/Save button.png";
 import "./Post.css";
 import { getPostFromId } from "../../services/posts-api";
 
-const Post = ({ id, user, handleDeletePost }) => {
-  const [post, setPost] = useState();
+const Post = ({ id, user, handleDeletePost, posts }) => {
 
-  useEffect(() => {
-    getPostInfo(id);
-  }, [id]);
 
-  const getPostInfo = async (postId) => {
-    const postInfo = await getPostFromId(postId);
-    setPost(postInfo);
-  };
 
+let post = posts.filter(singlePost => singlePost._id === id)
+post = post[0]
+console.log(post)
   return (
     <>
-      {post ? (
+      {typeof post.postedBy === "object" ? (
         <section className="post">
           <div className="posted-user-details">
             <div>

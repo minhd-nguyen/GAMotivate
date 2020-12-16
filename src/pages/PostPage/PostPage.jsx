@@ -4,7 +4,14 @@ import Comment from "../../components/Comment/Comment";
 import { getPostFromId } from "../../services/posts-api";
 import * as commentAPI from "../../services/comments-api";
 import ProfileImage from "../../Assets/Profile Image.png";
+import ProfileCard from '../../components/ProfileCard/ProfileCard';
 import "./PostPage.css";
+
+
+
+
+
+
 const PostPage = ({ posts, user }) => {
   const { id } = useParams();
   const [post, setPost] = useState(posts.filter((post) => post._id === id));
@@ -63,13 +70,9 @@ const PostPage = ({ posts, user }) => {
     <>
       {typeof post.postedBy === "object" ? (
         <div className="postPage">
-          <div className="profile-section">
-            <div className="profile-card">
-              <i className="fad fa-user-circle fa-10x"></i>
-              <p>Name</p>
-              <p>Cohort</p>
+            <div className="post-page-profile">
+         <ProfileCard  user={user}/>
             </div>
-          </div>
           <section className="post-page-form">
             <div className="thread-container">
               <section className="post-page">
