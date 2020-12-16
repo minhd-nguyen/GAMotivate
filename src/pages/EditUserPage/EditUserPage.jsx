@@ -1,52 +1,97 @@
-import React, { useState, useEffect } from 'react';
-import userService from '../../services/userService';
-import { useParams, Link } from 'react-router-dom';
-import "./EditUserPage.css";
-import ProfileImg from '../../Assets/Profile Image.png';
-export default function EditUserPage() {
-    const [account, setAccount] = useState({})
-    const { id } = useParams();
-    useEffect(() => {
-        getAccount()
-    }, [])
-    const getAccount = async () => {
-        const newAccount = await userService.getUserFromId(
-            id
-        )
-        console.log(newAccount)
-        setAccount(newAccount)
+import React, { useState } from "react"
+import userService from "../../services/userService"
+import { useParams, Link } from "react-router-dom"
+import ProfileImg from "../../Assets/Profile Image.png"
+import "./EditUserPage.css"
+
+export default function EditUserPage({ user, setUser, history }) {
+    const { id } = useParams()
+    const [formData, setFormData] = useState({
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        location: user.location || "",
+        linkedin: user.linkedin.includes("https://")
+            ? user.linkedin
+            : "https://",
+        portfolio: user.portfolio.includes("https://")
+            ? user.portfolio
+            : "https://",
+        cohort: user.cohort || "",
+    })
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value })
     }
+
+    const handleEditUserSubmit = async (e) => {
+        e.preventDefault()
+        const updatedUser = await userService.updateUser(formData)
+        setUser(updatedUser)
+        history.push(`/user/${id}`)
+    }
+
     return (
         <div className="outer-div">
             <div className="edit-user">
-                <center><summary>Edit Profile</summary></center>
-                <center><img src={ProfileImg} className="profile-img" alt="img" /></center>
-                <form id={account._id}>
+                <center>
+                    <summary>Edit Profile</summary>
+                </center>
+                <center>
+                    <img src={ProfileImg} className="profile-img" alt="img" />
+                </center>
+                <form onSubmit={handleEditUserSubmit}>
                     <label htmlFor="name">Name</label>
                     <br />
-                    <input type="text" id="name" />
+                    <input
+                        name="name"
+                        onChange={handleChange}
+                        value={formData.name}
+                    />
                     <br />
-                    <label htmlFor="speciality">Speciality</label>
+                    <label htmlFor="speciality">Cohort</label>
                     <br />
-                    <select style={{ display: "block" }}>
-                        <option>Software Engineer</option>
-                        <option>UX Designer</option>
-                        <option>Data Scientist</option>
+                    <select
+                        style={{ display: "block" }}
+                        onChange={handleChange}
+                        name="cohort"
+                        value={formData.cohort}
+                    >
+                        <option value="Software Engineer">
+                            Software Engineer
+                        </option>
+                        <option value="UX Designer">UX Designer</option>
+                        <option value="Data Scientist">Data Scientist</option>
                     </select>
                     <br />
                     <label htmlFor="location">Location</label>
                     <br />
-                    <input type="text" id="location" />
+                    <input
+                        type="text"
+                        onChange={handleChange}
+                        name="location"
+                        value={formData.location}
+                    />
                     <br />
                     <label htmlFor="linkedin">LinkedIn</label>
                     <br />
-                    <input type="text" id="linkedin" />
+                    <input
+                        onChange={handleChange}
+                        name="linkedin"
+                        value={formData.linkedin}
+                    />
                     <br />
                     <label htmlFor="portfolio">Portfolio</label>
                     <br />
-                    <input type="text" id="portfolio" />
+                    <input
+                        onChange={handleChange}
+                        name="portfolio"
+                        value={formData.portfolio}
+                    />
                     <br />
-                    <center><button type="button" value="Save" className="update-button"/></center>
+                    <center>
+                        <button className="edit-button">Save</button>
+                    </center>
                 </form>
             </div>
         </div>

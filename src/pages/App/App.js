@@ -115,12 +115,12 @@ const App = () => {
         <Route
           exact
           path="/user/:id/edit"
-          render={() => (
+          render={({history}) => (
             <>
               {user ? 
               <>
               <NavBar user={user} handleLogout={handleLogout}/>
-              <EditUserPage user={user} />
+              <EditUserPage user={user} setUser={setUser} history={history}/>
               </> : <Redirect to="/login" />}
             </>
           )}

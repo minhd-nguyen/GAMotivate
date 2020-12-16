@@ -1,216 +1,28 @@
-body{
-    font-family: 'Hind Guntur', sans-serif;
+.outer-div {
     display: flex;
     justify-content: center;
-    background-repeat: no-repeat, no-repeat;
-    background-position:  200% -40%;
-    background-size: 80%;
-  } 
-
-.card{
-  width: 310px;
-  height: 627px;
-  padding: 15px;
-  margin-top: 40px;
-  border-radius: 25px;
-  display: flex;
-  justify-content: center;
-  box-shadow: 15px 10px 25px 0px  #676767;
-  background: #fafafa;
-}
-
-form{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.field{
-  margin: 5px;
-  display: flex;
-  flex-direction: column;
-  }
-input[type="file"] {
-  display: none;
-}
-
-.custom-file-upload {
-  border-radius: 50%;
-  display: inline-block;
-  position: relative;
-  padding: 6px;
-  cursor: pointer;
-  background: linear-gradient(270deg, #676767, #b7b7b7);
-  margin-bottom: 25px;
-}
-
-.img-wrap{
-  position: relative;
-  width: 200px;
-  height: 200px;
-  overflow: hidden;
-  border-radius: 50%;
-}
-
-.img-upload:before{
-  content: "\f093";
-  font-size: 90px;
-  position: absolute;
-  padding-top: 80px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #bebebe;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: #fff;
-}
-
-.img-upload:hover:before{
-  opacity: 1;
-}
-
-img {
-  width: auto;
-  height: 100%;
-}
-
-label{
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #bebebe;
-}
-
-input{
-  border-radius: 15px;
-  border: 1px solid #b7b7b7;
-  padding: 5px 5px 5px 10px;
-  font-size: 18px;
-  transition: 0.2s;
-}
-
-input:focus{
-  outline: none;
-  border: 1px solid #b7b7b7;
-}
-
-input::placeholder{
-  color: #bebebe;
-}
-
-.name{ 
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #676767;
-  max-width: 220px;
-  overflow-wrap: break-word;
-}
-
-.specialty{
-  text-align: center;
-  max-width: 220px;
-  overflow-wrap: break-word;
-}
-
-.cohort{
-  text-align: center;
-  max-width: 220px;
-  overflow-wrap: break-word;
-}
-
-.location{
-  text-align: center;
-  max-width: 220px;
-  overflow-wrap: break-word;
-}
-
-button{
-  position: relative;
-  color: #012345;
-  letter-spacing: 1px;
-  margin: 20px;
-  font-size: 18px;
-  padding: 10px;
-  text-align: center;
-  transition: 0.5s;
-  border-radius: 10px;
-  cursor: pointer;
-  border-radius: 25px;
-  border: none;
-  background: red;
-}
-
-.save{
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 20px 0px 40px 0px  #bebebe;
-}
-
-.edit{
-  color: #fff;
-  width: 180px;
-}
-
-button:hover{
-  left: 0;
-  color: #fff;
-  width: 180px;
-  box-shadow: 0px 0px 20px 0px  #bebebe;
-}
-
-button:focus{
-  outline: none;
-}
-
-.lds-ripple {
-  display: inline-block;
-  position: relative;
-  width: 64px;
-  height: 64px;
-}
-.lds-ripple div {
-  position: absolute;
-  border: 4px solid #fff;
-  opacity: 1;
-  border-radius: 50%;
-  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
-}
-.lds-ripple div:nth-child(2) {
-  animation-delay: -0.5s;
-}
-
-.outer-div {
-  display: flex;
-  justify-content: center;
 }
 .edit-user {
-  background: #f0f0f0;
-  padding: 1.5em;
-  border-radius: 20px;
-  margin: 20px;
-  width: 80%;
+    background: #f0f0f0;
+    padding: 1.5em;
+    border-radius: 20px;
+    margin: 20px;
+    width: 60%;
 }
-input, textarea {
-  background-color: #ffffff !important;  
+input,
+textarea {
+    background-color: #ffffff !important;
 }
 summary {
-  font-size: 36px;
-  font-weight: bold;
+    font-size: 36px;
+    font-weight: bold;
 }
-.update-button {
-  background-color: #fa4542;
-  font-family: "Montserrat", sans-serif;
-  border-radius: 12px;
-  color: white;
-  padding: 20px 30px 20px 30px;
-  border: none;
-  box-shadow: 3px 3px 1px #888888;
+.update-button-3 {
+    background-color: #fa4542;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 12px;
+    color: white;
+    padding: 20px 30px 20px 30px;
+    border: none;
+    box-shadow: 3px 3px 1px #888888;
 }
-
