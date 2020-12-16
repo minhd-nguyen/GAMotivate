@@ -44,21 +44,6 @@ body {
   margin: 80px 20px 0 30px;
 }
 
-.profile-card {
-  width: 200px;
-  height: 300px;
-  border: 1px solid grey;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: rgb(246, 246, 246);
-  border-radius: 5px;
-}
-
-.profile-image {
-  width: 70px;
-}
 
 .post-section {
   grid-column: 2/3;

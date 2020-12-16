@@ -1,11 +1,8 @@
 import React from 'react';
 import './LandingPage.css'
 import LoginPage from '../LoginPage/LoginPage';
-import Logo from '../../Assets/galogo3.png'
-import NavBar from '../../components/NavBar/NavBar';
-import Background from '../../Assets/Background.png'
-import Title from '../../Assets/title.png';
-import Content from '../../Assets/content.png';
+import Logo from '../../Assets/galogo3.png';
+import Background from '../../Assets/Background.png';
 
 export default function LandingPage({history, handleSignupOrLogin}) {
     return (

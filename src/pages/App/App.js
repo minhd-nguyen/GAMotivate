@@ -82,11 +82,7 @@ const App = () => {
                 <NavBar user={user} handleLogout={handleLogout} />
                 <div className="feed-page">
                   <div className="profile-section">
-                    <div className="profile-card">
-                      <i className="fad fa-user-circle fa-10x"></i>
-                      <p>Name</p>
-                      <p>Cohort</p>
-                    </div>
+                    <ProfileCard user={user}/>
                   </div>
                   <div className="post-section">
                     <Posts user={user} posts={posts} setPosts={setPosts} />
@@ -105,7 +101,10 @@ const App = () => {
           render={() => (
             <>
               {user ? (
+                <>
+                <NavBar user={user} handleLogout={handleLogout}/>
                 <UserPage user={user} posts={posts} />
+                </>
               ) : (
                 <Redirect to="/login" />
               )}
@@ -116,9 +115,13 @@ const App = () => {
         <Route
           exact
           path="/user/:id/edit"
-          render={() => (
+          render={({history}) => (
             <>
-              {user ? <EditUserPage user={user} /> : <Redirect to="/login" />}
+              {user ? 
+              <>
+              <NavBar user={user} handleLogout={handleLogout}/>
+              <EditUserPage user={user} setUser={setUser} history={history}/>
+              </> : <Redirect to="/login" />}
             </>
           )}
         ></Route>

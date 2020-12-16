@@ -1,0 +1,28 @@
+.outer-div {
+    display: flex;
+    justify-content: center;
+}
+.edit-user {
+    background: #f0f0f0;
+    padding: 1.5em;
+    border-radius: 20px;
+    margin: 20px;
+    width: 60%;
+}
+input,
+textarea {
+    background-color: #ffffff !important;
+}
+summary {
+    font-size: 36px;
+    font-weight: bold;
+}
+.update-button-3 {
+    background-color: #fa4542;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 12px;
+    color: white;
+    padding: 20px 30px 20px 30px;
+    border: none;
+    box-shadow: 3px 3px 1px #888888;
+}

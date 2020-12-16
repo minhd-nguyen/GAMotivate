@@ -20,19 +20,21 @@ const Comment = ({ id, handleDeleteComment, user }) => {
     <div className="comment">
       {comment ? (
         <>
+          <img src={ProfileImage} alt="avatar" className="avatar" />
           <div>
-            <img src={ProfileImage} alt="avatar" className="avatar" />
-
-            <p className="user-details">{comment.postedBy.name}</p>
+            <p className="comment-name-details">{comment.postedBy.name}</p>
             <p className="user-details">
               {comment.postedBy.cohort ? comment.postedBy.cohort : "no coh"}
             </p>
           </div>
           <p className="comment-message">{comment.message}</p>
           {comment.postedBy._id === user._id ? (
-            <button onClick={() => handleDeleteComment(comment._id)}>
+            <div
+              className="post-delete-btn"
+              onClick={() => handleDeleteComment(comment._id)}
+            >
               <i className="far fa-trash-alt"></i>
-            </button>
+            </div>
           ) : (
             ""
           )}

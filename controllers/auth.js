@@ -55,6 +55,6 @@ function show(req, res) {
 }
 
 function update(req, res) {
-  User.findByIdAndUpdate(req.body._id, req.body)
+  User.findByIdAndUpdate(req.body._id, req.body, {new:true})
   .then(user => res.json(user))
 }
