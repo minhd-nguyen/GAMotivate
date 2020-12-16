@@ -53,3 +53,20 @@
   border: 0.5px solid lightgray;
   box-shadow: 0.5px 0.5px 1px 1px #ccc;
 }
+
+
+.refresh-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(231, 84, 75);
+    color: white;
+    border-radius: 5px;
+    height: 35px;
+    width: 115px;
+    font-weight: bold;
+}
+
+.left {
+    width: 90%;
+}
