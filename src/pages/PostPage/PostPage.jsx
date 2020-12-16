@@ -105,7 +105,12 @@ const PostPage = ({ posts, user }) => {
               )}
               {user ? (
                 <form onSubmit={handleCommentSubmit}>
-                  <div className="post-page-line"></div>
+                    {post.comments.length > 0 ? (
+                    <div className="post-page-line"></div>
+                  ) : (
+                    ""
+                  )}
+                  
                   <div className="main-post-page">
                     <textarea
                       className="post-page-input"

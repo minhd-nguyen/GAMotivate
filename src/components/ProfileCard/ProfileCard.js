@@ -9,8 +9,8 @@ export default function ProfileCard({user}) {
             </div>
             <div className="profile-info">
                 <p className="profile-name">{user.name}</p>
-                <p className="profile-special">{user.cohort}</p>
-                <p className="profile-location">{user.location}</p>
+                <p className="profile-special">Cohort: {user.cohort ? user.cohort : 'No cohort yet'}</p>
+                <p className="profile-location">City: {user.location ? user.location : "No city yet"}</p>
             </div>
         </div>
     )

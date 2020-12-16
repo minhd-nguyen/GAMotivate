@@ -13,7 +13,7 @@
 .message {
   max-width: 70%;
   margin: 0 auto;
-  word-break: keep-all;
+  word-break: break-word;
 }
 
 .posted-user-details {
@@ -39,6 +39,7 @@
 
 .user-details {
   margin: 5px 0;
+  text-decoration: none;
 }
 
 .avatar {
@@ -85,4 +86,10 @@
   height: 30px;
   margin: 5px 0 5px 20px;
   border-radius: 0;
+}
+
+.post-link {
+  display: flex;
+  justify-items: center;
+  color: black;
 }

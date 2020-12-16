@@ -62,11 +62,13 @@
   width: 70%;
   margin: 0 auto;
   font-size: 30px;
+  
 }
 
 .comment-message {
   width: 70%;
   margin: 0 auto;
+  word-break: break-word;
 }
 
 .posted-user-details {

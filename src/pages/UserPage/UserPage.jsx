@@ -3,6 +3,7 @@ import userService from "../../services/userService"
 import "./UserPage.css"
 import { useParams, Link } from "react-router-dom"
 import ProfileImage from "../../Assets/Profile Image.png"
+import ProfileCard from '../../components/ProfileCard/ProfileCard';
 
 export default function UserPage({ user, posts }) {
     const { id } = useParams()
@@ -19,99 +20,63 @@ export default function UserPage({ user, posts }) {
 
     return (
         <div className="User">
+            <div>
+            </div>
             <div className="inner-div">
-                <div className="background-color-div">
-                    <img src="img" alt="img" />
-                    <br />
-                    {user._id === account._id ? (
-                        <Link className="edit" to={`/user/${account._id}/edit`}>
-                            Edit Profile
-                        </Link>
-                    ) : (
-                            ""
-                        )}
-                    <br />
-                    <p>
-                        <b>{account.name}</b>
-                    </p>
-                    <br />
-                    <p>{account.job}</p>
-                    <br />
-                    <p>
-                        <b>{account.cohort}</b>
-                    </p>
-                    <br />
-                    <p>
-                        <b>{account.status}</b>
-                    </p>
-                    <br />
-                    <p>{account.location}</p>
-                    <br />
-                </div>
-                <div className="imgs">
-                    <img
-                        src="https://i.imgur.com/fm34YyM.png"
-                        width="18"
-                        alt="world"
-                    />{" "}
-                    <a href="#portfolio" target="_blank">
+
+                <ProfileCard user={account} />
+                <div className="user-links">
+                    <i className="fas fa-globe-americas fa-2x"></i>&nbsp;
+                    <a href={account.porfolio} rel="noreferrer" target="_blank">
                         Portfolio link
                     </a>
-                    <br />
-                    <img
-                        src="https://i.imgur.com/c9Rrzpx.png"
-                        alt="linkedin"
-                        width="18"
-                    />{" "}
-                    <a href="#linkedin" target="_blank">
+                   &nbsp;&nbsp;
+                    <i className="fab fa-linkedin fa-2x"></i> &nbsp;
+                    <a href={account.linkedin} rel="noreferrer" target="_blank">
                         LinkedIn link
                     </a>
-                    <br />
-                    <img
-                        src="https://i.imgur.com/LkBsi3O.png"
-                        alt="notifcations"
-                        width="18"
-                    />{" "}
-                    Notifications
                 </div>
             </div>
-            {posts
-                ? posts
-                    .filter((post) => post.postedBy._id === account._id)
-                    .map((post) => (
-                        <section className="post">
-                            <div className="posted-user-details">
-                                <div>
-                                    <img
-                                        src={ProfileImage}
-                                        alt="avatar"
-                                        className="avatar"
-                                    />
+            <div className="user-posts">
+                <h1 className="user-post-header">{account.name}'s Posts</h1>
+                {posts
+                    ? posts
+                        .filter((post) => post.postedBy._id === account._id)
+                        .map((post) => (
+                            <section className="post">
+                                <div className="posted-user-details">
                                     <div>
-                                        <p className="user-details">
-                                            {post.postedBy.name}
-                                        </p>
-                                        <p className="user-details">
-                                            {post.postedBy.cohort
-                                                ? post.postedBy.cohort
-                                                : "no coh"}
-                                        </p>
+                                        <img
+                                            src={ProfileImage}
+                                            alt="avatar"
+                                            className="avatar"
+                                        />
+                                        <div>
+                                            <p className="user-details">
+                                                {post.postedBy.name}
+                                            </p>
+                                            <p className="user-details">
+                                                {post.postedBy.cohort
+                                                    ? post.postedBy.cohort
+                                                    : "no coh"}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="message">
-                                <p>{post.message}</p>
-                            </div>
-                            <div className="post-bottom-section">
-                                <div className="post-line"></div>
-                            </div>
-                            <div className="reply-amount">
-                                {/* need to pass down replies  */}
-                                <p>{post.comments.length} replies</p>
-                            </div>
-                        </section>
-                    ))
-                : ""}
+                                <div className="message">
+                                    <p>{post.message}</p>
+                                </div>
+                                <div className="post-bottom-section">
+                                    <div className="post-line"></div>
+                                </div>
+                                <div className="reply-amount">
+
+                                    <p>{post.comments.length} replies</p>
+                                </div>
+                            </section>
+                        ))
+                    : ""}
+            </div>
         </div>
     )
 }
