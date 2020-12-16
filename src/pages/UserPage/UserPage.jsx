@@ -28,8 +28,8 @@ export default function UserPage({ user, posts }) {
                             Edit Profile
                         </Link>
                     ) : (
-                        ""
-                    )}
+                            ""
+                        )}
                     <br />
                     <p>
                         <b>{account.name}</b>
@@ -77,40 +77,40 @@ export default function UserPage({ user, posts }) {
             </div>
             {posts
                 ? posts
-                      .filter((post) => post.postedBy._id === account._id)
-                      .map((post) => (
-                          <section className="post">
-                              <div className="posted-user-details">
-                                  <div>
-                                      <img
-                                          src={ProfileImage}
-                                          alt="avatar"
-                                          className="avatar"
-                                      />
-                                      <div>
-                                          <p className="user-details">
-                                              {post.postedBy.name}
-                                          </p>
-                                          <p className="user-details">
-                                              {post.postedBy.cohort
-                                                  ? post.postedBy.cohort
-                                                  : "no coh"}
-                                          </p>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div className="message">
-                                  <p>{post.message}</p>
-                              </div>
-                              <div className="post-bottom-section">
-                                  <div className="post-line"></div>
-                              </div>
-                              <div className="reply-amount">
-                                  {/* need to pass down replies  */}
-                                  <p>{post.comments.length} replies</p>
-                              </div>
-                          </section>
-                      ))
+                    .filter((post) => post.postedBy._id === account._id)
+                    .map((post) => (
+                        <section className="post">
+                            <div className="posted-user-details">
+                                <div>
+                                    <img
+                                        src={ProfileImage}
+                                        alt="avatar"
+                                        className="avatar"
+                                    />
+                                    <div>
+                                        <p className="user-details">
+                                            {post.postedBy.name}
+                                        </p>
+                                        <p className="user-details">
+                                            {post.postedBy.cohort
+                                                ? post.postedBy.cohort
+                                                : "no coh"}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="message">
+                                <p>{post.message}</p>
+                            </div>
+                            <div className="post-bottom-section">
+                                <div className="post-line"></div>
+                            </div>
+                            <div className="reply-amount">
+                                {/* need to pass down replies  */}
+                                <p>{post.comments.length} replies</p>
+                            </div>
+                        </section>
+                    ))
                 : ""}
         </div>
     )
