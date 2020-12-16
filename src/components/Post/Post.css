@@ -11,9 +11,9 @@
 }
 
 .message {
-  width: 70%;
+  max-width: 70%;
   margin: 0 auto;
-  word-break: break-all;
+  word-break: keep-all;
 }
 
 .posted-user-details {

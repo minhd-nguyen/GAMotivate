@@ -1,0 +1,32 @@
+.profile-card {
+    height: 350px;
+    width: 250px;
+    border: 1px solid grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(246, 246, 246);
+    border-radius: 5px;
+    box-shadow: 2px 1px 2px 1px black;
+}
+
+.profile-image {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.profile-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.profile-special {
+    font-size: 18px;
+}
+
+.profile-location {
+    font-size: 18px;
+    font-weight: bold;
+}
