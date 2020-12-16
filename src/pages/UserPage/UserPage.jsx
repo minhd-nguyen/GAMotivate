@@ -37,7 +37,7 @@ export default function UserPage({ user, posts }) {
                         LinkedIn link
                     </a>
                 </div>
-                <Link to={`/user/${user._id}/edit`}>Edit Profile</Link>
+                <Link className="edit-page-btn" to={`/user/${user._id}/edit`}>Edit Profile</Link>
             </div>
             <div className="user-posts">
                 <h1 className="user-post-header">{account.name}'s Posts</h1>

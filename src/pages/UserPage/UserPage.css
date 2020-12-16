@@ -44,3 +44,17 @@
     box-shadow: 3px 3px 1px #888888;
     margin: 20px 0px 0px 0px;
 }
+
+
+.edit-page-btn {
+    border: 1px solid black;
+    color: white;
+    background-color: rgb(231, 84, 75);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 250px;
+    margin-top: 5px;
+}
