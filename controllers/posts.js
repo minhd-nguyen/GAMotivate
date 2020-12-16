@@ -16,6 +16,7 @@ function getPosts(req, res) {
 
 function getPostDetails(req, res) {
     Post.findById(req.params.id)
+    .populate('postedBy')
     .populate('comments')
     .then(post => res.json(post))
     .catch(err => res.json(err))

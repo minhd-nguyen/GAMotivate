@@ -7,7 +7,7 @@ module.exports = {
   signup,
   login,
   show,
-  getAll
+  update,
 };
 
 async function signup(req, res) {
@@ -54,7 +54,7 @@ function show(req, res) {
   .then(user => res.json(user));
 }
 
-function getAll(req, res) {
-  User.find({})
+function update(req, res) {
+  User.findByIdAndUpdate(req.body._id, req.body)
   .then(user => res.json(user))
 }

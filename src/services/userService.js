@@ -24,8 +24,9 @@ function signup(user) {
 function getUser() {
   return tokenService.getUserFromToken();
 }
+
 export function getUserFromId(id) {
-  return fetch(`${BASE_URL}/user/${id}`)
+  return fetch(`${BASE_URL}user/${id}`)
   .then(res => res.json());
 }
 
@@ -50,12 +51,22 @@ function login(creds) {
   .then(({token}) => tokenService.setToken(token));
 }
 
+function updateUser(user) {
+  return fetch(BASE_URL + 'update', {
+    method:'PUT',
+    headers: new Headers({'Content-Type': 'application/json'}),
+    body: JSON.stringify(user)
+  })
+  .then(res => res.json())
+}
+
 let functions = {
   signup,
   getUser,
   logout,
   login,
-  getUserFromId
+  getUserFromId,
+  updateUser,
 };
 
 export default functions

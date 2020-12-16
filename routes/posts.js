@@ -8,7 +8,7 @@ router.get("/:id", postCtrl.getPostDetails);
 
 // router.use(require('../config/auth'))
 
-router.post('', postCtrl.create)
-router.delete('/:id', postCtrl.deleteOne)
+router.post("", postCtrl.create);
+router.delete("/:id", postCtrl.deleteOne);
 
 module.exports = router;

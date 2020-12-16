@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import Logo from '../../Assets/galogo2.png'
 
 import './NavBar.css'
-const searchIcon = <i className="fas fa-search"></i>
+// const searchIcon = <i className="fas fa-search"></i>
 
 const NavBar = ({ user, handleLogout }) => {
   let nav = user ? 

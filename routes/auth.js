@@ -5,7 +5,7 @@ const authCtrl = require('../controllers/auth');
 router.post('/signup', authCtrl.signup);
 router.post('/login', authCtrl.login);
 router.get('/user/:id', authCtrl.show);
-router.get('',authCtrl.getAll)
+router.put('/update', authCtrl.update)
 
 router.use(require('../config/auth'));
 
