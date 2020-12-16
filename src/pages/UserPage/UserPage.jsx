@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import userService from '../../services/userService';
 import "./UserPage.css";
-import {useParams} from 'react-router-dom';
+import {useParams, Link} from 'react-router-dom';
+
 
 export default function UserPage() {
   const [account, setAccount] = useState({})
@@ -23,7 +24,7 @@ export default function UserPage() {
         <div className="inner-div">
           <div className="background-color-div">
             <img src="img" alt="img"/><br/>
-            <button>Edit Profile</button><br/>
+            <Link className="edit" to={`/user/${account._id}/edit`}>Edit Profile</Link><br/>
             <p><b>{account.name}</b></p><br/>
             <p>{account.job}</p><br/>
             <p><b>{account.cohort}</b></p><br/>

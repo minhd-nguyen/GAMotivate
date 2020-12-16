@@ -1,12 +1,88 @@
 .post {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-content: center;
-  border-bottom: 2px solid black;
+  border: 0.5px solid lightgray;
+  border-radius: 5px;
+  box-shadow: 0.5px 0.5px 1px 1px #ccc;
   margin: 15px 0;
+  width: 100%;
 }
 
 .message {
-  width: 80%;
+  width: 70%;
+  margin: 0 auto;
+  word-break: break-all;
+}
+
+.posted-user-details {
+  height: 5%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.posted-user-details > div {
+  display: flex;
+  flex-direction: row;
+}
+
+.post-bottom-section {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.user-details {
+  margin: 5px 0;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+}
+
+.avatar-bottom {
+  width: 25px;
+  height: 25px;
+  margin: 10px;
+}
+
+.reply-amount {
+  display: flex;
+  flex-direction: row;
+  margin-left: 50px;
+}
+
+.post-line {
+  width: 74%;
+  height: 1px;
+  background-color: black;
+}
+
+.post-delete-btn {
+  margin: 5px 5px 8px 8px;
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+}
+
+.comment-btn {
+  width: 45px;
+  height: 45px;
+  margin: 10px;
+}
+
+.save-post-btn {
+  width: 20px;
+  height: 30px;
+  margin: 5px 0 5px 20px;
+  border-radius: 0;
 }

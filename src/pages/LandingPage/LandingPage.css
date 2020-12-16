@@ -1,3 +1,7 @@
+.ga-login {
+
+}
+
 .landing-page {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -7,10 +11,17 @@
 .logo-section {
     grid-column: 1/2;
     display: flex;
-    justify-content: center;
+   justify-content: center;
     align-items: center;
     flex-direction: column;
     margin-top: 150px;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    text-shadow: 1px 1px black;
+}
+
+.content {
+    font-size: 18px;
 }
 
 .login-section {
